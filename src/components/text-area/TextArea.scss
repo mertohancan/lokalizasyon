@@ -13,10 +13,13 @@ $text-height: 220px;
     width: 100%;
     min-height: $text-height;
     background-color: $primaryColor;
+    font-size: 19px;
     padding: 45px 50px 0px 35px;
     resize: none;
     outline: none;
     border-color: rgba(118, 118, 118, 0.3);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     &:disabled {
         background-color: $primaryColor;
     }

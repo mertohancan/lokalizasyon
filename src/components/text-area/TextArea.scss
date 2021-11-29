@@ -1,7 +1,4 @@
-$primaryColor: #292a2c;
-$secondaryColor: #fff;
-$tomato: #e2231b;
-$black10: rgba(58, 58, 58, 0.1);
+@import "../../common/variables.scss";
 
 $text-height: 220px;
 
@@ -15,12 +12,12 @@ $text-height: 220px;
     box-sizing: border-box;
     width: 100%;
     min-height: $text-height;
+    background-color: $primaryColor;
     padding: 45px 50px 0px 35px;
-
     resize: none;
     outline: none;
     border-color: rgba(118, 118, 118, 0.3);
     &:disabled {
-        background-color: white;
+        background-color: $primaryColor;
     }
 }

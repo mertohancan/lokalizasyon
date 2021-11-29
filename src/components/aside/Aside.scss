@@ -1,4 +1,6 @@
 
+ @import "../../common/variables.scss";
+ 
  .aside-container {
     position: fixed;
     display: block;
@@ -9,8 +11,9 @@
     width: 432px;
     height: 100%;
     box-shadow: 0 0 6px 0 rgba(219, 224, 230, 0.6), 0 10px 24px 0 rgba(219, 224, 230, 0.7);
-    background-color:#fcfcfc;
-    color: black;
+    background-color:$primaryColor;
+    opacity: 0.99;
+    color: $secondaryColor;
     padding: 10px;
   
     @media screen and (max-width: 600px) {

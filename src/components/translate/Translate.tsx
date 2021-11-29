@@ -122,13 +122,13 @@ const Translate: FC<TranslateProps> = ({ onHistoryClick, onSave }) => {
 
       <div className="text-area-contents">
         <div className="text-area-wrapper">
-          <TextArea value={sourceText} placeholder="Hello world!" onChange={({ target }) => setSourceText(target.value)} />
+          <TextArea value={sourceText} placeholder={isSourceTurkish ? "Merhaba Dünya" : "Hello World"} onChange={({ target }) => setSourceText(target.value)} />
           <button type="button" className="simple-button voice-actions" onClick={toggleSpeechToText}>
             <img width={32} height={32} alt="voice actions" src={isListening ? StopIcon : MicrophoneIcon} />
           </button>
         </div>
         <div className="text-area-wrapper">
-          <TextArea placeholder="Merhaba dünya!" value={translatedText} disabled />
+          <TextArea placeholder={isSourceTurkish ? "Hello World" : "Merhaba Dünya"} value={translatedText} disabled />
           {debouncedSourceText && translatedText ? (
             <button disabled={isSaved} type="button" className="simple-button voice-actions" onClick={handleSave}>
               <img width={28} height={28} alt="save" src={isSaved ? SaveIcon : SaveEmptyIcon} />

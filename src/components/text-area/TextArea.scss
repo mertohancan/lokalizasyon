@@ -22,5 +22,6 @@ $text-height: 220px;
     border-bottom-right-radius: 5px;
     &:disabled {
         background-color: $primaryColor;
+        opacity: 1;
     }
 }

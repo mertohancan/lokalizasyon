@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import qs from 'qs';

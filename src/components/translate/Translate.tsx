@@ -114,12 +114,16 @@ const Translate: FC<TranslateProps> = ({ onHistoryClick, onSave }) => {
 
   return (
     <div className="translate-container">
+      <div className="translate-information">
+        <span className="typed-out">Hello astronaut, I hope all is well. You can translate into Turkish from the inputs below.</span>
+      </div>
+      <div className="separator" />
       <header className="translate-header">
-        <span className="bold">{sourceLanguage.title}</span>
-        <button type="button" onClick={handleChangeSourceLanguage} className="simple-button fixed">
+        <span className="bold source">{sourceLanguage.title}</span>
+        <button type="button" onClick={handleChangeSourceLanguage} className="simple-button">
           <img width={16} height={16} alt="change" src={ChangeIcon} />
         </button>
-        <span className="bold">{isSourceTurkish ? LANGUAGE_EN.title : LANGUAGE_TR.title}</span>
+        <span className="bold source">{isSourceTurkish ? LANGUAGE_EN.title : LANGUAGE_TR.title}</span>
       </header>
 
       <div className="text-area-contents">

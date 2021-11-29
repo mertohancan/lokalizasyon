@@ -1,9 +1,3 @@
-
-$primaryColor : #292a2c;
-$secondaryColor: #fff;
-$tomato: #e2231b;
-$black10: rgba(58, 58, 58, 0.1);
-
 h1{
     font-size: 20px;
 }
@@ -14,6 +8,37 @@ h1{
   margin: 0 auto;
 }
 
-.app-box {
-  background-color: $secondaryColor;
+.row {
+ display: flex;
+ flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.separator {
+  margin-top: 20px;
+}
+
+.simple-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+  cursor: pointer;
+  &:disabled {
+    cursor: inherit;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fixed {
+  position: fixed;
 }

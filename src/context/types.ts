@@ -9,7 +9,7 @@ export type Action =
     | { type: ACTIONS.SET_PAST_SEARCH; payload: SavedItems[] }
     | {
         type: ACTIONS.REMOVE_PAST_SEARCH;
-        payload: number
+        payload: string
       }
     | { type: ACTIONS.SHOW_DRAWER; payload: boolean }
     | { type: ACTIONS.CLEAR };

@@ -20,6 +20,8 @@ const appReducer = (state: AppState, action: Action): AppState => {
   switch (action.type) {
     case ACTIONS.SET_PAST_SEARCH:
       return { ...state, searches: action.payload };
+    case ACTIONS.REMOVE_PAST_SEARCH:
+      return { ...state, searches: state.searches.filter((previous) => previous.date !== action.payload) };
     case ACTIONS.SHOW_DRAWER:
       return { ...state, showDrawer: action.payload };
     case ACTIONS.CLEAR:
@@ -68,12 +70,12 @@ export const useSetPastSearch = (): ((payload: SavedItems[]) => void) => {
   return (payload: SavedItems[]) => dispatch({ type: ACTIONS.SET_PAST_SEARCH, payload });
 };
 
-export const useRemovePastSearch = (): ((payload: number) => void) => {
+export const useRemovePastSearch = (): ((payload: string) => void) => {
   const dispatch = useContext(AppDispatchContext);
   if (dispatch === undefined) {
     throw new Error('useRemovePastSearch must be used within a AppProvider');
   }
-  return (payload: number) => dispatch({ type: ACTIONS.REMOVE_PAST_SEARCH, payload });
+  return (payload: string) => dispatch({ type: ACTIONS.REMOVE_PAST_SEARCH, payload });
 };
 
 export const useSetShowDrawer = (): ((payload: boolean) => void) => {

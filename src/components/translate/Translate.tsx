@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState, useEffect, FC } from 'react';
 import TextArea from '../text-area/TextArea';
 import { useDebounce, useTranslate } from '../../hooks/hooks';
@@ -12,13 +10,9 @@ import {
 } from '../../assets/icons';
 import { SavedItems } from '../../context/types';
 
-interface IWindow extends Window {
-  speechRecognition?: any;
-  webkitSpeechRecognition?: any;
-}
 
-const SpeechRecognition = (window as IWindow).speechRecognition
- || (window as IWindow).webkitSpeechRecognition;
+//@ts-ignore
+const SpeechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
 
 const mic = new SpeechRecognition();
 
@@ -31,8 +25,8 @@ interface ILanguages {
 }
 
 interface TranslateProps {
-  onHistoryClick?(): void;
-  onSave(search: SavedItems): void;
+  onHistoryClick: () => void;
+  onSave: (search: SavedItems) => void;
 }
 
 const Translate: FC<TranslateProps> = ({ onHistoryClick, onSave }) => {
@@ -68,7 +62,7 @@ const Translate: FC<TranslateProps> = ({ onHistoryClick, onSave }) => {
 
     mic.onresult = (event: any) => {
       const transcript = Array.from(event.results)
-      // @ts-ignore
+        //@ts-ignore
         .map((result) => result[0])
         .map((result) => result.transcript)
         .join('');

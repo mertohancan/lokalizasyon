@@ -3,7 +3,7 @@ import './TextArea.scss';
 
 interface TextAreaProps {
     value: string;
-    onChange?(event: ChangeEvent<HTMLTextAreaElement>): void;
+    onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
     disabled?: boolean;
     placeholder?: string;
   }

@@ -1,5 +1,5 @@
 # Localization
-This repository provides localization.
+This application provides english - turkish translate. you may need to change google api key in src/constant.
 
 Currently only target platform is web.
 

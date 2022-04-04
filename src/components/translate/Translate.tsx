@@ -41,7 +41,7 @@ const Translate: FC<TranslateProps> = ({ onHistoryClick, onSave }) => {
   const isSourceTurkish = sourceLanguage.code === 'tr';
   mic.lang = isSourceTurkish ? LANGUAGE_TR.code : LANGUAGE_EN.code;
 
-  const { translatedText } = useTranslate(debouncedSourceText, isSourceTurkish ? LANGUAGE_EN.code : LANGUAGE_TR.code);
+  const { translatedText } = useTranslate(debouncedSourceText, isSourceTurkish ? LANGUAGE_TR.code : LANGUAGE_EN.code, isSourceTurkish ? LANGUAGE_EN.code : LANGUAGE_TR.code);
 
   const handleListen = () => {
     if (isListening) {

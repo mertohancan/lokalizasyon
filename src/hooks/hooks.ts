@@ -17,7 +17,7 @@ export function useDebounce<T>(value: T, delay?: number): T {
   return debouncedValue;
 }
 
-export const useTranslate = (sourceText: string, targetCode: string) => {
+export const useTranslate = (sourceText: string, sourceCode: string, targetCode: string) => {
   const [translatedText, setTranslatedText] = useState('');
 
   useEffect(() => {
@@ -25,13 +25,17 @@ export const useTranslate = (sourceText: string, targetCode: string) => {
 
     const fetchData = async () => {
       const translation = await axios.post(
-        `https://translation.googleapis.com/language/translate/v2?key=${GOOGLE_API_KEY}`,
+        `https://libretranslate.de/translate`,
         qs.stringify({
           q: sourceText,
+          source: "en",
           target: targetCode,
+          format: "text"
         }),
       );
-      setTranslatedText(translation.data.data.translations[0].translatedText);
+      //@ts-ignore
+      setTranslatedText(translation.data.translatedText);
+
     };
 
     fetchData();
